@@ -1,25 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Greeting from './components/Greeting';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  // rconst
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: 'Vasia',
+      isGreeting: true,
+    };
+  }
+
+  // Дописать в стейт isGreeting и передавать в пропсы
+
+  render() {
+    const { name, isGreeting } = this.state;
+    return <Greeting name={name} isGreeting={isGreeting} />;
+  }
 }
+//rcc
 
 export default App;
+
+// function App() {
+//   return <Greeting name="Vasia" />;
+// }
+// props = {name:"Vasia"}
+// Greeting(props)
