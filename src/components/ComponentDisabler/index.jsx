@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Stopwatch from '../Stopwatch';
+import StopwatchWithTimeout from '../StopwatchWithTimeout';
 
 class ComponentDisabler extends Component {
   //+ дописать компонент, задать состояние isHidden
@@ -26,7 +26,7 @@ class ComponentDisabler extends Component {
       <>
         <button onClick={this.changeMode}>{isHidden ? 'Show' : 'Hide'}</button>
         {/* {isHidden ? null : <Stopwatch />} */}
-        {!isHidden && <Stopwatch />}
+        {!isHidden && <StopwatchWithTimeout />}
       </>
     );
   }

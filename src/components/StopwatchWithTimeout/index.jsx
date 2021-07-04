@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from './Stopwatch.module.css';
+import styles from './StopwatchWithTimeout.module.css';
 
-class Stopwatch extends Component {
+class StopwatchWithTimeout extends Component {
   constructor(props) {
     super(props);
 
@@ -25,24 +25,27 @@ class Stopwatch extends Component {
     this.start();
   }
 
-  componentDidUpdate(prevProps, prevState) {}
+  componentDidUpdate(prevProps, prevState) {
+    const { isRunning } = this.state;
+    if (isRunning) {
+      this.timerId = setTimeout(this.tick, 1000);
+    }
+  }
 
   componentWillUnmount() {
     this.stop();
   }
 
   start = () => {
-    if (!this.timerId) {
-      this.timerId = setInterval(this.tick, 1000);
-      this.setState({ isRunning: true });
-    }
+    this.setState({ isRunning: true });
   };
   stop = () => {
-    clearInterval(this.timerId);
+    clearTimeout(this.timerId);
     this.timerId = null;
     this.setState({ isRunning: false });
   };
   reset = () => {
+    // доработать
     this.setState({ time: new Date(0, 0, 0, 0, 0, 0, 0) });
   };
 
@@ -63,4 +66,4 @@ class Stopwatch extends Component {
     );
   }
 }
-export default Stopwatch;
+export default StopwatchWithTimeout;

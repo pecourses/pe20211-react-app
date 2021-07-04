@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import ComponentDisabler from './components/ComponentDisabler';
+import Greeting from './components/Greeting';
 
 // rfce
 function App() {
