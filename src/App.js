@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import UsersList from './components/UsersList';
+import ParentUsersList from './components/ParentUsersList';
 // import Counter from './components/Counter';
 
 // rfce
 function App() {
-  return <UsersList />;
+  return <ParentUsersList />;
 }
 
 export default App;
