@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import ComponentDisabler from './components/ComponentDisabler';
 import LoginForm from './components/LoginForm';
 
 // rfce
