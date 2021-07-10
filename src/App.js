@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
 import ComponentDisabler from './components/ComponentDisabler';
-import Greeting from './components/Greeting';
+import LoginForm from './components/LoginForm';
 
 // rfce
 function App() {
-  return <ComponentDisabler />;
+  return <LoginForm />;
 }
 
 export default App;
