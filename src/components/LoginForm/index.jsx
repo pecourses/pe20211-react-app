@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
+import styles from './LoginForm.module.css';
 
 class LoginForm extends Component {
   //rconst
@@ -33,12 +35,24 @@ class LoginForm extends Component {
   };
 
   render() {
-    const { loginValue, passwValue } = this.state;
+    const { loginValue, passwValue, isLoginValid } = this.state;
+    // const loginClassName = `${styles.input} ${
+    //   isLoginValid ? styles.valid : null
+    // }`;
+    // const loginClassName = classNames(styles.input, {
+    //   [styles.valid]: isLoginValid,
+    //   [styles.invalid]: !isLoginValid,
+    // });
+    const loginClassName = classNames(
+      styles.input,
+      isLoginValid ? styles.valid : styles.invalid
+    );
     return (
-      <form onSubmit={this.submitHandler}>
-        <label>
+      <form className={styles.container} onSubmit={this.submitHandler}>
+        <label className={styles.inputLabel}>
           Login
           <input
+            className={loginClassName}
             type="text"
             placeholder="login"
             name="loginValue"
@@ -46,9 +60,10 @@ class LoginForm extends Component {
             onChange={this.handleLoginChange}
           />
         </label>
-        <label>
+        <label className={styles.inputLabel}>
           Password
           <input
+            className={styles.input}
             type="password"
             name="passwValue"
             placeholder="password"
