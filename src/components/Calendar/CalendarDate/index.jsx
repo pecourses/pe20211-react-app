@@ -1,7 +1,8 @@
 import React from 'react';
 
-function CalendarDate() {
-  return <td>10</td>;
+function CalendarDate(props) {
+  const { date } = props;
+  return <td>{date}</td>;
 }
 
 export default CalendarDate;
