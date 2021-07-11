@@ -1,6 +1,7 @@
 import { parse, addDays } from 'date-fns';
 import React from 'react';
 import CalendarDate from './../CalendarDate';
+import PropTypes from 'prop-types';
 
 const getDaysOfWeek = (week, year) => {
   const startOfWeek = parse(`${year} ${week}`, 'Y w', new Date());
@@ -18,5 +19,10 @@ function Week(props) {
 
   return <tr>{getDaysOfWeek(week, year)}</tr>;
 }
+
+Week.propTypes = {
+  week: PropTypes.number.isRequired,
+  year: PropTypes.number.isRequired,
+};
 
 export default Week;

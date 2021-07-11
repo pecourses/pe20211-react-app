@@ -5,22 +5,22 @@ import ChildSelectedUsersList from './../ChildSelectedUsersList';
 const dbUsers = [
   {
     id: 1,
-    firstName: 'Test1',
+    // firstName: 'Test1',
     lastName: 'Testovich1',
   },
   {
     id: 2,
-    firstName: 'Test2',
+    // firstName: 'Test2',
     lastName: 'Testovich2',
   },
   {
     id: 3,
-    firstName: 'Test3',
+    // firstName: 'Test3',
     lastName: 'Testovich3',
   },
   {
     id: 4,
-    firstName: 'Test4',
+    // firstName: 'Test4',
     lastName: 'Testovich4',
   },
 ];

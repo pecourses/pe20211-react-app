@@ -1,11 +1,13 @@
 import './App.css';
 import React from 'react';
-import Calendar from './components/Calendar';
+
+import ParentUsersList from './components/ParentUsersList';
 
 // rfce
-function App() {
-  return <Calendar />;
-}
+// function App() {
+//   return <Calendar />;
+// }
+const App = () => <ParentUsersList />;
 
 export default App;
 

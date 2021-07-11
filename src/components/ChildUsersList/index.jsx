@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import UserListItem from './UserListItem';
+import UserListItem, { usersPropStructure } from './UserListItem';
+import PropTypes from 'prop-types';
 
 function ChildUsersList(props) {
   const { users, setUsers } = props;
@@ -18,5 +19,10 @@ function ChildUsersList(props) {
 
   return <ul>{users.map(mapUser)}</ul>;
 }
+
+ChildUsersList.propTypes = {
+  users: PropTypes.arrayOf(usersPropStructure).isRequired,
+  setUsers: PropTypes.func.isRequired,
+};
 
 export default ChildUsersList;
