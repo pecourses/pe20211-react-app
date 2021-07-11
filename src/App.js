@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import LoginForm from './components/LoginForm';
+import Calendar from './components/Calendar';
 
 // rfce
 function App() {
-  return <LoginForm />;
+  return <Calendar />;
 }
 
 export default App;
