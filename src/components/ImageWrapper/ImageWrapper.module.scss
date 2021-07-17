@@ -1,0 +1,9 @@
+.imageContainer {
+  width: 600px;
+  height: 400px;
+  & > img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}
