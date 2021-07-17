@@ -1,6 +1,10 @@
 import './App.css';
 import React from 'react';
-import ImageWrapper from './components/ImageWrapper';
+import VeiwPortParams from './components/VeiwPortParams';
+
+function App() {
+  return <VeiwPortParams />;
+}
 
 // prop children
 // function TestComponent(props) {
@@ -38,21 +42,21 @@ import ImageWrapper from './components/ImageWrapper';
 // }
 
 // === Проброс пропсов =================
-function App() {
-  return (
-    <ImageWrapper
-      width={'400px'}
-      height={'300px'}
-      title={'Cat)))'}
-      tabIndex={1}
-      className={'test'}>
-      <img
-        src={'https://cdnimg.rg.ru/img/content/178/22/40/kotik_d_850.jpg'}
-        alt={'cat'}
-      />
-    </ImageWrapper>
-  );
-}
+// function App() {
+//   return (
+//     <ImageWrapper
+//       width={'400px'}
+//       height={'300px'}
+//       title={'Cat)))'}
+//       tabIndex={1}
+//       className={'test'}>
+//       <img
+//         src={'https://cdnimg.rg.ru/img/content/178/22/40/kotik_d_850.jpg'}
+//         alt={'cat'}
+//       />
+//     </ImageWrapper>
+//   );
+// }
 
 export default App;
 
