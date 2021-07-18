@@ -1,11 +1,19 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+} from 'react-router-dom';
 import Greeting from './components/Greeting';
 import Counter from './components/Counter';
 import Calendar from './components/Calendar';
 import Stopwatch from './components/Stopwatch';
-import HomePage from './page/HomePage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/HomePage';
+import ContactsPage from './pages/HomePage';
 
 // ===== Routing =================================
 
@@ -57,39 +65,32 @@ function PageFooter() {
 }
 
 function ComponentsPage() {
+  const { path, url } = useRouteMatch();
+
   return (
     <div>
-      Components page:
-      {/* <Router>
-        <ul>
-          <li>
-            <Link to={'/'}>Home</Link>
-          </li>
-          <li>
-            <Link to={'/counter'}>Counter</Link>
-          </li>
-          <li>
-            <Link to={'/calendar'}>Calendar</Link>
-          </li>
-          <li>
-            <Link to={'/stopwatch'}>StopWatch</Link>
-          </li>
-        </ul>
-        <Switch>
-          <Route exact path={'/'}>
-            <Greeting name={'Test'} />
-          </Route>
-          <Route path={'/counter'}>
-            <Counter />
-          </Route>
-          <Route path={'/calendar'}>
-            <Calendar />
-          </Route>
-          <Route path={'/stopwatch'}>
-            <Stopwatch />
-          </Route>
-        </Switch>
-      </Router> */}
+      <ul>
+        <li>
+          <Link to={`${url}/greeting`}>Greeting</Link>
+        </li>
+        <li>
+          <Link to={`${url}/counter`}>Counter</Link>
+        </li>
+        <li>
+          <Link to={`${url}/calendar`}>Calendar</Link>
+        </li>
+      </ul>
+      <Switch>
+        <Route path={`${path}/greeting`}>
+          <Greeting name={'Test'} />
+        </Route>
+        <Route path={`${path}/counter`}>
+          <Counter />
+        </Route>
+        <Route path={`${path}/calendar`}>
+          <Calendar />
+        </Route>
+      </Switch>
     </div>
   );
 }
