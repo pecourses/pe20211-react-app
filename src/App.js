@@ -3,6 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Greeting from './components/Greeting';
 import Counter from './components/Counter';
+import Calendar from './components/Calendar';
+import Stopwatch from './components/Stopwatch';
+import HomePage from './page/HomePage';
 
 // ===== Routing =================================
 
@@ -10,13 +13,66 @@ function App() {
   /* ДОПИСАТЬ МАРШРУТЫ ДЛЯ ДВУХ ДРУГИХ КОМПОНЕНТОВ */
   return (
     <>
+      <PageHeader />
       <Router>
         <ul>
           <li>
             <Link to={'/'}>Home</Link>
           </li>
           <li>
+            <Link to={'/components'}>Components</Link>
+          </li>
+          <li>
+            <Link to={'/contacts'}>Contacts</Link>
+          </li>
+          <li>
+            <Link to={'/about'}>About</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path={'/'}>
+            <HomePage />
+          </Route>
+          <Route path={'/components'}>
+            <ComponentsPage />
+          </Route>
+          <Route path={'/contacts'}>
+            <ContactsPage />
+          </Route>
+          <Route path={'/about'}>
+            <AboutPage />
+          </Route>
+        </Switch>
+      </Router>
+      <PageFooter />
+    </>
+  );
+}
+
+function PageHeader() {
+  return <div>Header</div>;
+}
+function PageFooter() {
+  return <div>Footer</div>;
+}
+
+function ComponentsPage() {
+  return (
+    <div>
+      Components page:
+      {/* <Router>
+        <ul>
+          <li>
+            <Link to={'/'}>Home</Link>
+          </li>
+          <li>
             <Link to={'/counter'}>Counter</Link>
+          </li>
+          <li>
+            <Link to={'/calendar'}>Calendar</Link>
+          </li>
+          <li>
+            <Link to={'/stopwatch'}>StopWatch</Link>
           </li>
         </ul>
         <Switch>
@@ -26,9 +82,15 @@ function App() {
           <Route path={'/counter'}>
             <Counter />
           </Route>
+          <Route path={'/calendar'}>
+            <Calendar />
+          </Route>
+          <Route path={'/stopwatch'}>
+            <Stopwatch />
+          </Route>
         </Switch>
-      </Router>
-    </>
+      </Router> */}
+    </div>
   );
 }
 
