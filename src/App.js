@@ -12,8 +12,8 @@ import Counter from './components/Counter';
 import Calendar from './components/Calendar';
 import Stopwatch from './components/Stopwatch';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/HomePage';
-import ContactsPage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactsPage from './pages/ContactsPage';
 
 // ===== Routing =================================
 
