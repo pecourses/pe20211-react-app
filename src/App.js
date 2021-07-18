@@ -11,6 +11,7 @@ import Greeting from './components/Greeting';
 import Counter from './components/Counter';
 import Calendar from './components/Calendar';
 import Stopwatch from './components/Stopwatch';
+import NotFound from './components/NotFound';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
@@ -50,6 +51,7 @@ function App() {
           <Route path={'/about'}>
             <AboutPage />
           </Route>
+          <Route path={'*'} component={NotFound} />
         </Switch>
       </Router>
       <PageFooter />
@@ -90,6 +92,7 @@ function ComponentsPage() {
         <Route path={`${path}/calendar`}>
           <Calendar />
         </Route>
+        <Route path={`${path}/*`} component={NotFound} />
       </Switch>
     </div>
   );
