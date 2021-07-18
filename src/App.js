@@ -1,12 +1,43 @@
 import './App.css';
 import React from 'react';
-import VeiwPortParams from './components/VeiwPortParams';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Greeting from './components/Greeting';
+import Counter from './components/Counter';
+
+// ===== Routing =================================
 
 function App() {
-  return <VeiwPortParams />;
+  /* ДОПИСАТЬ МАРШРУТЫ ДЛЯ ДВУХ ДРУГИХ КОМПОНЕНТОВ */
+  return (
+    <>
+      <Router>
+        <ul>
+          <li>
+            <Link to={'/'}>Home</Link>
+          </li>
+          <li>
+            <Link to={'/counter'}>Counter</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path={'/'}>
+            <Greeting name={'Test'} />
+          </Route>
+          <Route path={'/counter'}>
+            <Counter />
+          </Route>
+        </Switch>
+      </Router>
+    </>
+  );
 }
 
-// prop children
+// === window.innerSizes =======================================
+// function App() {
+//   return <VeiwPortParams />;
+// }
+
+// === prop children ====================
 // function TestComponent(props) {
 //   const { prop1, className, children } = props;
 //   console.log(`prop1`, prop1);
