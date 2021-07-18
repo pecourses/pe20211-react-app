@@ -15,88 +15,92 @@ import NotFound from './components/NotFound';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
-
+import CounterWrapper from './components/CounterWrapper';
 // ===== Routing =================================
 
 function App() {
-  /* ДОПИСАТЬ МАРШРУТЫ ДЛЯ ДВУХ ДРУГИХ КОМПОНЕНТОВ */
-  return (
-    <>
-      <PageHeader />
-      <Router>
-        <ul>
-          <li>
-            <Link to={'/'}>Home</Link>
-          </li>
-          <li>
-            <Link to={'/components'}>Components</Link>
-          </li>
-          <li>
-            <Link to={'/contacts'}>Contacts</Link>
-          </li>
-          <li>
-            <Link to={'/about'}>About</Link>
-          </li>
-        </ul>
-        <Switch>
-          <Route exact path={'/'}>
-            <HomePage />
-          </Route>
-          <Route path={'/components'}>
-            <ComponentsPage />
-          </Route>
-          <Route path={'/contacts'}>
-            <ContactsPage />
-          </Route>
-          <Route path={'/about'}>
-            <AboutPage />
-          </Route>
-          <Route path={'*'} component={NotFound} />
-        </Switch>
-      </Router>
-      <PageFooter />
-    </>
-  );
+  return <CounterWrapper />;
 }
 
-function PageHeader() {
-  return <div>Header</div>;
-}
-function PageFooter() {
-  return <div>Footer</div>;
-}
+// function App() {
+//   /* ДОПИСАТЬ МАРШРУТЫ ДЛЯ ДВУХ ДРУГИХ КОМПОНЕНТОВ */
+//   return (
+//     <>
+//       <PageHeader />
+//       <Router>
+//         <ul>
+//           <li>
+//             <Link to={'/'}>Home</Link>
+//           </li>
+//           <li>
+//             <Link to={'/components'}>Components</Link>
+//           </li>
+//           <li>
+//             <Link to={'/contacts'}>Contacts</Link>
+//           </li>
+//           <li>
+//             <Link to={'/about'}>About</Link>
+//           </li>
+//         </ul>
+//         <Switch>
+//           <Route exact path={'/'}>
+//             <HomePage />
+//           </Route>
+//           <Route path={'/components'}>
+//             <ComponentsPage />
+//           </Route>
+//           <Route path={'/contacts'}>
+//             <ContactsPage />
+//           </Route>
+//           <Route path={'/about'}>
+//             <AboutPage />
+//           </Route>
+//           <Route path={'*'} component={NotFound} />
+//         </Switch>
+//       </Router>
+//       <PageFooter />
+//     </>
+//   );
+// }
 
-function ComponentsPage() {
-  const { path, url } = useRouteMatch();
+// function PageHeader() {
+//   return <div>Header</div>;
+// }
+// function PageFooter() {
+//   return <div>Footer</div>;
+// }
 
-  return (
-    <div>
-      <ul>
-        <li>
-          <Link to={`${url}/greeting`}>Greeting</Link>
-        </li>
-        <li>
-          <Link to={`${url}/counter`}>Counter</Link>
-        </li>
-        <li>
-          <Link to={`${url}/calendar`}>Calendar</Link>
-        </li>
-      </ul>
-      <Switch>
-        <Route path={`${path}/greeting`}>
-          <Greeting name={'Test'} />
-        </Route>
-        <Route path={`${path}/counter`}>
-          <Counter />
-        </Route>
-        <Route path={`${path}/calendar`}>
-          <Calendar />
-        </Route>
-        <Route path={`${path}/*`} component={NotFound} />
-      </Switch>
-    </div>
-  );
-}
+// function ComponentsPage() {
+//   const { path, url } = useRouteMatch();
+
+//   return (
+//     <div>
+//       <ul>
+//         <li>
+//           <Link to={`${url}/greeting`}>Greeting</Link>
+//         </li>
+//         <li>
+//           <Link to={`${url}/counter`}>Counter</Link>
+//         </li>
+//         <li>
+//           <Link to={`${url}/calendar`}>Calendar</Link>
+//         </li>
+//       </ul>
+//       <Switch>
+//         <Route path={`${path}/greeting`}>
+//           <Greeting name={'Test'} />
+//         </Route>
+//         <Route path={`${path}/counter`}>
+//           <Counter />
+//         </Route>
+//         <Route path={`${path}/calendar`}>
+//           <Calendar />
+//         </Route>
+//         <Route path={`${path}/*`} component={NotFound} />
+//       </Switch>
+//     </div>
+//   );
+// }
 
 // === window.innerSizes =======================================
 // function App() {
