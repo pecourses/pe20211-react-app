@@ -7,19 +7,12 @@ import {
   Link,
   useRouteMatch,
 } from 'react-router-dom';
-import Greeting from './components/Greeting';
-import Counter from './components/Counter';
-import Calendar from './components/Calendar';
-import Stopwatch from './components/Stopwatch';
-import NotFound from './components/NotFound';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ContactsPage from './pages/ContactsPage';
-import CounterWrapper from './components/CounterWrapper';
+
+import UsersLoader from './components/UsersLoader';
 // ===== Routing =================================
 
 function App() {
-  return <CounterWrapper />;
+  return <UsersLoader />;
 }
 
 // function App() {
