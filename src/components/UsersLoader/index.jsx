@@ -13,11 +13,22 @@ class UsersLoader extends Component {
   }
 
   componentDidMount() {
+    this.load();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
     const { currentPage } = this.state;
 
+    if (prevState.currentPage !== currentPage) {
+      this.load();
+    }
+  }
+
+  load = () => {
+    const { currentPage } = this.state;
     this.setState({ isFetching: true });
     fetch(
-      `https://randomuser.me/api/?seed=pe2021-1&page=${currentPage}&results=5`
+      `https://randomuser.me/api/?seed=pe2021-1&page=${currentPage}&results=5&inc=gender,name,email`
     )
       .then(response => response.json())
       .then(data => {
@@ -29,21 +40,36 @@ class UsersLoader extends Component {
       .finally(() => {
         this.setState({ isFetching: false });
       });
-  }
+  };
+
+  prevPage = () => {
+    const { currentPage } = this.state;
+    if (currentPage > 1) {
+      this.setState({ currentPage: currentPage - 1 });
+    }
+  };
+
+  nextPage = () => {
+    const { currentPage } = this.state;
+    this.setState({ currentPage: currentPage + 1 });
+  };
 
   render() {
     const { users, isError, isFetching } = this.state;
 
-    if (isError) {
-      return <div>!!!ERROR!!!</div>;
-    }
-    if (isFetching) {
-      return <div>Loading...</div>;
-    }
+    // if (isError) {
+    //   return <div>!!!ERROR!!!</div>;
+    // }
+    // if (isFetching) {
+    //   return <div>Loading...</div>;
+    // }
     return (
       <>
-        <button>{'<'}</button>
-        <button>{'>'}</button>
+        {isError && <div>!!!ERROR!!!</div>}
+        {isFetching && <div>Loading...</div>}
+        {/* Реализовать обработчики */}
+        <button onClick={this.prevPage}>{'<'}</button>
+        <button onClick={this.nextPage}>{'>'}</button>
         <ul>
           {users.map((user, index) => (
             <li key={index}>{JSON.stringify(user)}</li>
