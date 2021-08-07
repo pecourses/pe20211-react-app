@@ -1,22 +1,22 @@
-import "./App.css";
-import React, { Component } from "react";
+import './App.css';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useRouteMatch,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import UsersLoader from "./components/UsersLoader";
-import PhonesProvider from "./components/PhonesProvider";
-import UsersProvider from "./components/UsersProvider";
-import DataProvider from "./components/DataProvider";
-import MouseTracker from "./components/MouseTracker";
-import { ThemeContext, UserContext } from "./contexts";
-import UserPage from "./pages/UserPage";
-import LogInForm from "./components/LogInForm";
-import Carousel from "./components/Carousel";
+import UsersLoader from './components/UsersLoader';
+import PhonesProvider from './components/PhonesProvider';
+import UsersProvider from './components/UsersProvider';
+import DataProvider from './components/DataProvider';
+import MouseTracker from './components/MouseTracker';
+import { ThemeContext, UserContext } from './contexts';
+import UserPage from './pages/UserPage';
+import LogInForm from './components/forms/LogInForm';
+import Carousel from './components/Carousel';
 // ===== Formik ===================================
 
 const App = () => <LogInForm />;

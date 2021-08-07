@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { LOGIN_SCHEMA } from '../../../utils/validatingSchemas';
+import Input from '../Input';
 
 function LogInForm() {
   const loginFormInitialValues = {
@@ -21,16 +22,13 @@ function LogInForm() {
       {formikProps => {
         return (
           <Form>
-            <Input type="text" name="email" />
-
-            <Field type="text" name="email" />
-            <ErrorMessage name="email" component="div" />
-
-            <br />
-
+            <Input
+              type="text"
+              name="email"
+              placeholder="test@test.test"
+              autofocus
+            />
             <Input type="password" name="password" />
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
 
             <button type="submit">Submit</button>
           </Form>
@@ -38,29 +36,6 @@ function LogInForm() {
         );
       }}
     </Formik>
-
-    // <Formik
-    //   initialValues={{
-    //     userEmail: '',
-    //     userPassword: '',
-    //   }}
-    //   validationSchema={LOGIN_SCHEMA}
-    //   onSubmit={(values, formikBag) => {
-    //     console.log(`values`, values);
-    //     formikBag.resetForm();
-    //   }}>
-    //   {formikProps => {
-    //     return (
-    //       // <form onSubmit={formikProps.onSubmit}>
-    //       <Form>
-    //         <Field type="email" name="userEmail" />
-    //         <Field type="password" name="userPassword" />
-    //         <button type="submit">Submit</button>
-    //       </Form>
-    //       // {userEmail:'', userPassword:''}
-    //     );
-    //   }}
-    // </Formik>
   );
 }
 
