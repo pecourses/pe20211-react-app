@@ -1,7 +1,7 @@
 import queryString from 'query-string';
 import config from './../configs';
 
-export function loadUsers(options = {}) {
+export function loadUsers (options = {}) {
   const defaultOptions = {
     page: 1,
     results: 10,

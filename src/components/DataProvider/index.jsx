@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class DataProvider extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -11,7 +11,7 @@ class DataProvider extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({ isFetching: true });
     fetch(this.props.fileName) //???
       .then(res => res.json())
@@ -25,7 +25,7 @@ class DataProvider extends Component {
   // принять откуда грузить
   // принять как рендерить
   // передать данные
-  render() {
+  render () {
     const { data, isFetching, error } = this.state;
     // const { render } = this.props;
     // const layout = render({ ...this.state });

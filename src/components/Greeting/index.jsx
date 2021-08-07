@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Greeting.module.css';
 
 // Принять пропс isGreeting
-function Greeting(props) {
+function Greeting (props) {
   const { name, isGreeting } = props;
 
   return (

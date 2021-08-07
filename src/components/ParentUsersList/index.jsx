@@ -26,7 +26,7 @@ const dbUsers = [
 ];
 
 class ParentUsersList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -38,7 +38,7 @@ class ParentUsersList extends Component {
     this.setState({ users: newUsers });
   };
 
-  render() {
+  render () {
     const { users } = this.state;
     return (
       <>

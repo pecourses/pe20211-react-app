@@ -17,9 +17,14 @@ import { ThemeContext, UserContext } from './contexts';
 import UserPage from './pages/UserPage';
 import LogInForm from './components/forms/LogInForm';
 import Carousel from './components/Carousel';
+import MouseClickerH from './components/MouseClickerH';
+// ===== Hooks ========================================
+
+const App = () => <MouseClickerH />;
+
 // ===== Formik ===================================
 
-const App = () => <LogInForm />;
+// const App = () => <LogInForm />;
 
 // ===== Carousel ===================================
 

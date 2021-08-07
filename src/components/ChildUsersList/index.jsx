@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserListItem, { usersPropStructure } from './UserListItem';
 import PropTypes from 'prop-types';
 
-function ChildUsersList(props) {
+function ChildUsersList (props) {
   const { users, setUsers } = props;
 
   const mapUser = (user, index) => {

@@ -16,7 +16,7 @@ const getWeeks = date => {
   return weeks;
 };
 
-function Month(props) {
+function Month (props) {
   const { date } = props;
 
   return (

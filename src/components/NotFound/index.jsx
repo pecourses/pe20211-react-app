@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NotFound(props) {
+function NotFound (props) {
   const { history } = props;
 
   setTimeout(() => {

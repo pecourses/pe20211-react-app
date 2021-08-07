@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function UserListItem(props) {
+function UserListItem (props) {
   const {
     user: { id, firstName, lastName, isSelected },
     onClickHandler,

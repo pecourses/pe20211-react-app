@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
  выводить значение (state)
  по нажатию на -/+ уменьшать/увеличивать значение*/
 class Counter extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -29,7 +29,7 @@ class Counter extends PureComponent {
     this.setState({ count: this.state.count + this.props.step });
   };
 
-  render() {
+  render () {
     const { count } = this.state;
     console.log('rerender :>> ');
     return (
@@ -40,7 +40,8 @@ class Counter extends PureComponent {
         <button
           onClick={() => {
             this.setState({ count: this.state.count });
-          }}>
+          }}
+        >
           0
         </button>
       </>

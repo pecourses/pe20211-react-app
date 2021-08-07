@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class PhonesProvider extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -11,7 +11,7 @@ class PhonesProvider extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({ isFetching: true });
     fetch('/phones.json')
       .then(res => res.json())
@@ -22,7 +22,7 @@ class PhonesProvider extends Component {
       });
   }
 
-  render() {
+  render () {
     const { phones, isFetching, error } = this.state;
     return (
       <>

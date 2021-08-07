@@ -1,7 +1,10 @@
 import * as yup from 'yup';
 
 export const LOGIN_SCHEMA = yup.object({
-  email: yup.string().email('Your message').required(),
+  email: yup
+    .string()
+    .email('Your message')
+    .required(),
   password: yup
     .string()
     .matches(
@@ -43,3 +46,5 @@ export const LOGIN_SCHEMA = yup.object({
 
 // isValid, isValidSync, validate, validateSync
 // const isValid = LOGIN_SCHEMA.isValidSync(validatedObject);
+
+// passwordConfirmation: ....oneOf([yup.ref('password')], 'confirmation pass must match password')

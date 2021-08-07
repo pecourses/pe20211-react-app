@@ -1,7 +1,7 @@
 import React from 'react';
 import { format } from 'date-fns';
 
-function Day() {
+function Day () {
   const currentDate = new Date();
   return (
     <section>

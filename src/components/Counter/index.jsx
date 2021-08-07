@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // rcc
 class Counter extends Component {
   //rconst
-  constructor(props) {
+  constructor (props) {
     super(props);
     // иммутабельность - сост не изменяется, а заменяется
     this.state = {
@@ -26,13 +26,13 @@ class Counter extends Component {
     this.setState({ step: Number(e.target.value) });
   };
 
-  render() {
+  render () {
     const { counter, step } = this.state;
 
     return (
       <>
         <div>{counter}</div>
-        <input type="number" value={step} onChange={this.changeStep} />
+        <input type='number' value={step} onChange={this.changeStep} />
         <br />
         <button onClick={this.decrement}>-</button>
         <button onClick={this.increment}>+</button>

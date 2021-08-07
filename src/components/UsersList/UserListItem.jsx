@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserListItem(props) {
+function UserListItem (props) {
   const {
     user: { id, firstName, lastName, isSelected },
     onClickHandler,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class MouseTracker extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -14,15 +14,15 @@ class MouseTracker extends Component {
     this.setState({ x: e.clientX, y: e.clientY });
   };
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('mousemove', this.handleMouseMove);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('mousemove', this.handleMouseMove);
   }
 
-  render() {
+  render () {
     const { myRender } = this.props;
     return myRender({ ...this.state });
   }

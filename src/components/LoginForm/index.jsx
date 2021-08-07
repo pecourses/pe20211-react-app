@@ -4,7 +4,7 @@ import styles from './LoginForm.module.scss';
 
 class LoginForm extends Component {
   //rconst
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -34,7 +34,7 @@ class LoginForm extends Component {
     e.preventDefault();
   };
 
-  render() {
+  render () {
     const { loginValue, passwValue, isLoginValid } = this.state;
     // const loginClassName = `${styles.input} ${
     //   isLoginValid ? styles.valid : null
@@ -55,9 +55,9 @@ class LoginForm extends Component {
           Login
           <input
             className={loginClassName}
-            type="text"
-            placeholder="login"
-            name="loginValue"
+            type='text'
+            placeholder='login'
+            name='loginValue'
             value={loginValue}
             onChange={this.handleLoginChange}
           />
@@ -66,14 +66,14 @@ class LoginForm extends Component {
           Password
           <input
             className={styles.input}
-            type="password"
-            name="passwValue"
-            placeholder="password"
+            type='password'
+            name='passwValue'
+            placeholder='password'
             value={passwValue}
             onChange={this.handlePasswordChange}
           />
         </label>
-        <button type="submit">Login</button>
+        <button type='submit'>Login</button>
       </form>
     );
   }

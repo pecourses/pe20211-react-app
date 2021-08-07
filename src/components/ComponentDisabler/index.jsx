@@ -7,7 +7,7 @@ class ComponentDisabler extends Component {
   // надпись на кнопке менять Hide (если показан и нужно убрать)
   //                          Show  (если убран и нужно показать)
   // в зависимости от isHidden скрывать/показывать Stopwatch
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -20,7 +20,7 @@ class ComponentDisabler extends Component {
     this.setState({ isHidden: !isHidden });
   };
 
-  render() {
+  render () {
     const { isHidden } = this.state;
     return (
       <>

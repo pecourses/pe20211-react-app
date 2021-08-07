@@ -3,7 +3,7 @@ import { withUser } from '../HOCs';
 import { UserContext } from './../../contexts';
 import styles from './UserPageSidebar.module.scss';
 
-function UserPageSidebar(props) {
+function UserPageSidebar (props) {
   const { user } = props;
   return (
     <div className={styles.sidebarContainer}>

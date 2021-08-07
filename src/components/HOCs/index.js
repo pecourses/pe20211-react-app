@@ -1,7 +1,7 @@
 import { UserContext } from '../../contexts';
 
-export function withUser(WrappedComponent) {
-  function WrappedComponentWithUser(props) {
+export function withUser (WrappedComponent) {
+  function WrappedComponentWithUser (props) {
     return (
       <UserContext.Consumer>
         {user => {

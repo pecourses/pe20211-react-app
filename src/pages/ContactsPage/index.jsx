@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ContactsPage() {
+function ContactsPage () {
   return <div>Contacts page</div>;
 }
 

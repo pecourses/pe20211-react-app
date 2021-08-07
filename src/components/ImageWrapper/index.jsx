@@ -3,7 +3,7 @@ import styles from './ImageWrapper.module.scss';
 import PropTypes from 'prop-types';
 // rfcp
 
-function ImageWrapper(props) {
+function ImageWrapper (props) {
   const { children, width, height, ...restProps } = props;
   console.dir(restProps);
   const inlineStyle = {

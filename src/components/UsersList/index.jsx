@@ -25,7 +25,7 @@ const dbUsers = [
 ];
 
 class UsersList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -65,7 +65,7 @@ class UsersList extends Component {
   };
   //UserListItem({user:user})
 
-  render() {
+  render () {
     const { users } = this.state;
     return (
       <>

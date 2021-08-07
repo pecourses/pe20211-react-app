@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class UsersProvider extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -11,7 +11,7 @@ class UsersProvider extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({ isFetching: true });
     fetch('/users.json')
       .then(res => res.json())
@@ -22,7 +22,7 @@ class UsersProvider extends Component {
       });
   }
 
-  render() {
+  render () {
     const { users, isFetching, error } = this.state;
     return (
       <>

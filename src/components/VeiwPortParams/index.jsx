@@ -2,7 +2,7 @@ import { isThisSecond } from 'date-fns';
 import React, { Component } from 'react';
 
 class VeiwPortParams extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -10,7 +10,7 @@ class VeiwPortParams extends Component {
       h: window.innerHeight,
     };
   }
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('resize', this.handleResize);
   }
 
@@ -21,11 +21,11 @@ class VeiwPortParams extends Component {
     });
   };
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  render() {
+  render () {
     const { w, h } = this.state;
     return (
       <div>

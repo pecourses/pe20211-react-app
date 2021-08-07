@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import styles from "./Slide.module.scss";
-import defImage from "./question-mark.jpg";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styles from './Slide.module.scss';
+import defImage from './question-mark.jpg';
 
 class Slide extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     // при инициализации вешать обработчик на img,
     //    чтобы при завершении загрузки отобразить картинку
     //    или отловить ошибку
     const img = new Image();
-    img.addEventListener("load", this.handleLoad);
-    img.addEventListener("error", this.handleError);
+    img.addEventListener('load', this.handleLoad);
+    img.addEventListener('error', this.handleError);
 
     this.state = {
       img,
@@ -29,11 +29,11 @@ class Slide extends Component {
     this.setState({ error: true });
   };
 
-  componentDidMount() {
+  componentDidMount () {
     this.load();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     const { src } = this.props;
     const { isLoaded, error } = this.state;
     // если еще не загрузился (и не ошибка) - то грузить
@@ -52,7 +52,7 @@ class Slide extends Component {
     img.src = src;
   };
 
-  render() {
+  render () {
     const { src, title, description, isCurrent } = this.props;
     const { isLoaded, error } = this.state;
     // в зависимости от isCurrent показывать или скрывать слайд
@@ -63,7 +63,7 @@ class Slide extends Component {
         <figure className={figureClassName}>
           {/* в зависимости от isLoaded показывать слайд или заглушку, при ошибке также заглушка будет */}
           {/* как альтернатива можно показывать какой-нибудь библиотечный спиннер */}
-          <img src={isLoaded ? src : defImage} alt="Space" />
+          <img src={isLoaded ? src : defImage} alt='Space' />
           <figcaption>
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{description}</p>
@@ -83,8 +83,8 @@ Slide.propTypes = {
 
 Slide.defaultProps = {
   src: defImage,
-  title: "Unknown",
-  description: "There are no information about the photo",
+  title: 'Unknown',
+  description: 'There are no information about the photo',
   isCurrent: false,
 };
 

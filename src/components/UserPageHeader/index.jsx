@@ -3,7 +3,7 @@ import { withUser } from '../HOCs';
 import { ThemeContext, UserContext } from './../../contexts';
 import styles from './UserPageHeader.module.scss';
 
-function UserPageHeader(props) {
+function UserPageHeader (props) {
   const { user } = props;
   return (
     <div className={styles.headerContainer}>

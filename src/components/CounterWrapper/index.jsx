@@ -6,7 +6,7 @@ step передавать в Counter
 input:range*/
 
 class CounterWrapper extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -18,14 +18,15 @@ class CounterWrapper extends Component {
     this.setState({ step: Number(e.target.value) });
   };
 
-  render() {
+  render () {
     return (
       <>
         <div>Step: {this.state.step}</div>
         <input
-          type="range"
+          type='range'
           value={this.state.step}
-          onChange={this.changeHandle}></input>
+          onChange={this.changeHandle}
+        ></input>
         <Counter step={this.state.step} />
       </>
     );

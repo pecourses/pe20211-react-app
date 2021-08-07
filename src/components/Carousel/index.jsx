@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Slide from "./Slide";
-import styles from "./Carousel.module.scss";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Slide from './Slide';
+import styles from './Carousel.module.scss';
 
 class Carousel extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -45,7 +45,7 @@ class Carousel extends Component {
 
   // prevIndex, nextIndex, prevSlide, nextSlide
 
-  render() {
+  render () {
     const { currentIndex } = this.state;
     const { slides } = this.props;
     // Грузим 3 слайда: текущий показываем, 2 соседних грузим,
@@ -62,8 +62,8 @@ class Carousel extends Component {
         <Slide {...slides[currentIndex]} isCurrent />
         <Slide {...slides[this.nextIndex]} />
         <div className={styles.buttonContainer}>
-          <button onClick={this.prevSlide}>{"<"}</button>
-          <button onClick={this.nextSlide}>{">"}</button>
+          <button onClick={this.prevSlide}>{'<'}</button>
+          <button onClick={this.nextSlide}>{'>'}</button>
         </div>
       </article>
     );

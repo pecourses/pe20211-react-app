@@ -14,7 +14,7 @@ const getDaysOfWeek = (week, year) => {
   return days;
 };
 
-function Week(props) {
+function Week (props) {
   const { week, year } = props;
 
   return <tr>{getDaysOfWeek(week, year)}</tr>;
