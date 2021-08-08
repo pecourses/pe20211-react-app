@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+// Выводить значение count в document.titile
+// Т.е. document.titile = ЗНАЧЕНИЕ;
 
 function CounterH () {
   const [count, setCount] = useState(0);

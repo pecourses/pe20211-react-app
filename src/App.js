@@ -21,11 +21,15 @@ import MouseClickerH from './components/MouseClickerH';
 import CounterH from './components/CounterH';
 import ClickerH from './components/ClickerH';
 import ComponentDisablerH from './components/ComponentDisablerH';
+import UsersLoaderH from './components/UsersLoaderH';
+import StopwatchH from './components/StopwatchH';
 // ===== Hooks ========================================
 
 // const App = () => <MouseClickerH />;
-// const App = () => <CounterH />;
-const App = () => <ComponentDisablerH />;
+const App = () => <CounterH />;
+// const App = () => <ComponentDisablerH />;
+// const App = () => <UsersLoaderH />;
+// const App = () => <StopwatchH />;
 // ===== Formik ===================================
 
 // const App = () => <LogInForm />;
