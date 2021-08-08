@@ -18,10 +18,11 @@ import UserPage from './pages/UserPage';
 import LogInForm from './components/forms/LogInForm';
 import Carousel from './components/Carousel';
 import MouseClickerH from './components/MouseClickerH';
+import CounterH from './components/CounterH';
 // ===== Hooks ========================================
 
-const App = () => <MouseClickerH />;
-
+// const App = () => <MouseClickerH />;
+const App = () => <CounterH />;
 // ===== Formik ===================================
 
 // const App = () => <LogInForm />;
