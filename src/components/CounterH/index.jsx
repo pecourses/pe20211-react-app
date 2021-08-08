@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 // Выводить значение count в document.titile
-// Т.е. document.titile = ЗНАЧЕНИЕ;
+// Т.е. document.title = ЗНАЧЕНИЕ;
 
 function CounterH () {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
+
+  useEffect(() => {
+    document.title = count;
+    console.log('DocTitle :>> ', count);
+  }, [count]);
 
   const decrement = () => {
     setCount(count - step);
