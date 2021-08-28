@@ -26,6 +26,8 @@ import StopwatchH from './components/StopwatchH';
 import TodoPage from './pages/TodoPage';
 import CounterWithThemeH from './components/CounterWithThemeH';
 import CONSTANTS from './constants';
+import UsersLoaderWithCustomHook from './components/UsersLoaderWithCustomHook';
+import CounterWithReducerH from './components/CounterWithReducerH';
 // ===== Hooks ========================================
 
 // const App = () => <MouseClickerH />;
@@ -35,15 +37,19 @@ import CONSTANTS from './constants';
 // const App = () => <StopwatchH />;
 // const App = () => <TodoPage />;
 
-const App = () => {
-  const themes = useState(CONSTANTS.THEMES.LIGHT);
+// const App = () => {
+//   const themes = useState(CONSTANTS.THEMES.LIGHT);
 
-  return (
-    <ThemeContext.Provider value={themes}>
-      <CounterWithThemeH />
-    </ThemeContext.Provider>
-  );
-};
+//   return (
+//     <ThemeContext.Provider value={themes}>
+//       <CounterWithThemeH />
+//     </ThemeContext.Provider>
+//   );
+// };
+
+// const App = () => <UsersLoaderWithCustomHook />;
+
+const App = () => <CounterWithReducerH />;
 
 // ===== Formik ===================================
 
