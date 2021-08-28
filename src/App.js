@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, useContext } from 'react';
+import React, { useState, Component, useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +24,8 @@ import ComponentDisablerH from './components/ComponentDisablerH';
 import UsersLoaderH from './components/UsersLoaderH';
 import StopwatchH from './components/StopwatchH';
 import TodoPage from './pages/TodoPage';
+import CounterWithThemeH from './components/CounterWithThemeH';
+import CONSTANTS from './constants';
 // ===== Hooks ========================================
 
 // const App = () => <MouseClickerH />;
@@ -31,7 +33,18 @@ import TodoPage from './pages/TodoPage';
 // const App = () => <ComponentDisablerH />;
 // const App = () => <UsersLoaderH />;
 // const App = () => <StopwatchH />;
-const App = () => <TodoPage />;
+// const App = () => <TodoPage />;
+
+const App = () => {
+  const themes = useState(CONSTANTS.THEMES.LIGHT);
+
+  return (
+    <ThemeContext.Provider value={themes}>
+      <CounterWithThemeH />
+    </ThemeContext.Provider>
+  );
+};
+
 // ===== Formik ===================================
 
 // const App = () => <LogInForm />;
@@ -109,10 +122,10 @@ const App = () => <TodoPage />;
 //     </UserContext.Consumer>
 //   );
 // };
-// App (Pr)
-//   UserPage
-//     UserPageHeader  (Cons)
-//     UserPageSidebar (Cons)
+// App(Pr);
+// UserPage;
+// UserPageHeader(Cons);
+// UserPageSidebar(Cons);
 
 // ===== Рендер-пропсы ===========================
 // function Cat(props) {
